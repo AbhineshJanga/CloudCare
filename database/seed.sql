@@ -14,23 +14,23 @@ INSERT INTO users
     (name, email, password_hash, phone, role)
 VALUES
     ('CloudCare Admin', 'admin@cloudcare.local',
-     '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy',
+     '$2b$10$HMa/erjlmJKOu5cLZ34p3.IJy8ZvuvXOVgeOO34jC6Fj1tEkKNBUy',
      '9000000001', 'ADMIN'),
 
     ('Dr. Arjun Sharma', 'arjun.doctor@cloudcare.local',
-     '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy',
+     '$2b$10$HMa/erjlmJKOu5cLZ34p3.IJy8ZvuvXOVgeOO34jC6Fj1tEkKNBUy',
      '9000000002', 'DOCTOR'),
 
     ('Dr. Priya Mehta', 'priya.doctor@cloudcare.local',
-     '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy',
+     '$2b$10$HMa/erjlmJKOu5cLZ34p3.IJy8ZvuvXOVgeOO34jC6Fj1tEkKNBUy',
      '9000000003', 'DOCTOR'),
 
     ('Rahul Kumar', 'rahul.patient@cloudcare.local',
-     '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy',
+     '$2b$10$HMa/erjlmJKOu5cLZ34p3.IJy8ZvuvXOVgeOO34jC6Fj1tEkKNBUy',
      '9000000004', 'PATIENT'),
 
     ('Ananya Reddy', 'ananya.patient@cloudcare.local',
-     '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy',
+     '$2b$10$HMa/erjlmJKOu5cLZ34p3.IJy8ZvuvXOVgeOO34jC6Fj1tEkKNBUy',
      '9000000005', 'PATIENT');
 
 
