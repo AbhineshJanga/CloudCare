@@ -3,6 +3,8 @@ import cors from 'cors';
 import pool from "./config/database.js";
 import authRoutes from "./routes/auth.routes.js";
 import patientRoutes from "./routes/patient.routes.js";
+import doctorRoutes from "./routes/doctor.routes.js";
+import adminRoutes from "./routes/admin.routes.js";
 
 const app = express();
  //Middleware
@@ -11,6 +13,8 @@ const app = express();
 
  app.use("/api/auth", authRoutes);
  app.use("/api/patients", patientRoutes);
+ app.use("/api/doctors", doctorRoutes);
+ app.use("/api/admin", adminRoutes);
  //Health chk route
  app.get('/api/health',(req,res) => {
     res.status(200).json({
