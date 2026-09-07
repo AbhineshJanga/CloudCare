@@ -369,7 +369,6 @@ export const createPrescription = async (
     medicines,
     instructions
 ) => {
-    // Verify that the appointment belongs to this doctor
     const [appointmentRows] = await pool.query(
         `SELECT
             a.appointment_id,
@@ -389,7 +388,6 @@ export const createPrescription = async (
         );
     }
 
-    // One prescription per appointment
     const [existingRows] = await pool.query(
         `SELECT prescription_id
          FROM prescriptions
@@ -420,14 +418,35 @@ export const createPrescription = async (
         ]
     );
 
+    /*
+     * Return the complete prescription object,
+     * matching the GET /prescriptions response.
+     */
     const [rows] = await pool.query(
         `SELECT
             pr.prescription_id,
-            pr.appointment_id,
             pr.prescription_date,
             pr.medicines,
-            pr.instructions
+            pr.instructions,
+            pr.appointment_id,
+            p.patient_id,
+            pu.name AS patient_name,
+            d.doctor_id,
+            du.name AS doctor_name,
+            d.specialization,
+            a.appointment_date,
+            a.appointment_time
          FROM prescriptions pr
+         INNER JOIN appointments a
+             ON pr.appointment_id = a.appointment_id
+         INNER JOIN patients p
+             ON a.patient_id = p.patient_id
+         INNER JOIN users pu
+             ON p.user_id = pu.user_id
+         INNER JOIN doctors d
+             ON a.doctor_id = d.doctor_id
+         INNER JOIN users du
+             ON d.user_id = du.user_id
          WHERE pr.prescription_id = ?`,
         [result.insertId]
     );

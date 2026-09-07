@@ -1,11 +1,12 @@
+import AppRoutes from "./routes/AppRoutes";
+import { AuthProvider } from "./context/AuthContext";
+
 function App() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-slate-100">
-      <h1 className="text-4xl font-bold text-blue-600">
-        CloudCare
-      </h1>
-    </div>
-  )
+    <AuthProvider>
+      <AppRoutes />
+    </AuthProvider>
+  );
 }
 
-export default App
+export default App;
