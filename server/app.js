@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import pool from "./config/database.js";
 import authRoutes from "./routes/auth.routes.js";
+import patientRoutes from "./routes/patient.routes.js";
 
 const app = express();
  //Middleware
@@ -9,6 +10,7 @@ const app = express();
  app.use(express.json())
 
  app.use("/api/auth", authRoutes);
+ app.use("/api/patients", patientRoutes);
  //Health chk route
  app.get('/api/health',(req,res) => {
     res.status(200).json({
